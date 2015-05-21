@@ -1,0 +1,123 @@
+p, label {
+	font-size: 12pt;
+}
+
+h1, h2 {
+	font-weight: 700;
+	text-align: center;
+	padding: 10px 0 40px;
+}
+
+label {
+	padding-top: 25px;
+	font-weight: 700;
+}
+
+.navbar-default, .navbar-collapse, .dropdown-menu {
+	background-color: #ffce00;
+	color: #3400b2;
+}
+
+.navbar-default .navbar-nav > li > a {
+	padding: 15px 21px;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+	color: #ffffff;
+	background-color: #b2a500;
+}
+
+.navbar-default .navbar-nav > li > a,
+.dropdown-menu > li > a {
+	color: #3400b2;
+}
+
+.btn {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px 50px;
+	margin-top: 30px;
+}
+
+.well {
+	background-color: #ffffff;
+	padding: 40px 0;
+	border-color: #ffffff;
+	box-shadow: none;
+}
+
+/** LANDING PAGE **/
+
+#main {
+	margin: 50px 0;
+}
+
+#login-well {
+	width: 500px;
+}
+
+#login-form {
+	padding: 50px 10px 50px;
+}
+
+/** OTHER PAGES **/
+
+#other {
+	margin-top: 100px;
+	margin-bottom: 70px;
+}
+
+#user-photo, img[alt="success"] {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/** FOOTER **/
+
+footer {
+	background-color: #4a00ff;
+	padding: 25px 5px;
+}
+
+#footer-title {
+	text-align: center;
+	line-height: 10px;
+	color: #ffffff;
+	padding: 10px 0 0;
+}
+
+#footer-links {
+	list-style-type: none;
+	padding: 0;
+	overflow: hidden;
+	margin: 0;
+}
+
+#footer-links > li {
+	display: inline;
+	float: left;
+	padding: 0 15px;
+}
+
+#footer-links > li > a {
+	display: block;
+	color: #ffffff;
+}
+
+#footer-links > li > a:hover {
+	color: #d2d2d2;
+}
+
+img[alt="slu"] {
+	width: 50px;
+}
