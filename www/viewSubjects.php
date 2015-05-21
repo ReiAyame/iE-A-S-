@@ -17,7 +17,7 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>Course Number</th>
+						<th>Subject Code</th>
 						<th>Description</th>
 						<th>Unit</th>
 						<th>Price</th>
@@ -28,7 +28,7 @@
 					<?php $no=1; ?>
 					<?php foreach($result as $subject): ?>
                     <tr>
-                        <td><?php echo $subject["course_no"]; ?></td>
+                        <td><?php echo $subject["subject_code"]; ?></td>
                         <td><?php echo $subject["description"]; ?></td>
                         <td><?php echo $subject["unit"] ?></td>
                         <td><?php echo $subject["price"] ?></td>

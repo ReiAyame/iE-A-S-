@@ -18,7 +18,7 @@
 				<thead>
 					<tr>
 						<th>Class Code</th>
-						<th>Course Number</th>
+						<th>Subject Code</th>
 						<th>Description</th>
 						<th>Time</th>
 						<th>Days</th>
@@ -33,14 +33,14 @@
                         <td><?php echo $class["class_code"]; ?></td>
                         <td><?php 
 
-                        		$course_no = $class["course_no"];
-                        		echo "$course_no";
+                        		$subject_code = $class["subject_code"];
+                        		echo "$subject_code";
 
                         	?></td>
                         <td><?php
 
-                        		$desc = $pdo->prepare("SELECT * FROM `ienroll`.`subjects` WHERE `course_no`=?;");
-									$desc->bindValue(1,$course_no);
+                        		$desc = $pdo->prepare("SELECT * FROM `ienroll`.`subjects` WHERE `subject_code`=?;");
+									$desc->bindValue(1,$subject_code);
 								$desc->execute();
 								$res = $desc->fetchAll();
 

@@ -30,7 +30,7 @@
 		<div class="container well">
 			<h2>Add Subject</h2>
 			<form action="addSubject.php" id="form" method="post">
-				<label>Course Code: </label>
+				<label>Subject Code: </label>
 					<input class="form-control" type="text"  name="code" placeholder="IT 312L"/>
 				<label>Description: </label>
 					<input class="form-control" type="text"  name="desc" placeholder="Programming Applications Laboratory"/>

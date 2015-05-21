@@ -1,26 +1,27 @@
 <?php
 
 	include "fragments/header.php";
-	include "fragments/nav.php";
 
 	require_once("fragments/connection.php");
 	
 	if (isset($_POST["addClass"])) {
 
-		$class_code = $_POST["class_code"];
-		$course_no = $_POST["course_no"];
-		$start_time = $_POST["start_time"];
-		$end_time = $_POST["end_time"];
-		$days = $_POST["days"];
-		$room = $_POST["room"];
+		$username = $_POST["username"];
+		$password = $_POST["password"];
+		$first_name = $_POST["first_name"];
+		$middle_name = $_POST["middle_name"];
+		$last_name = $_POST["last_name"];
+		$department = $_POST["department"];
+		$email = $_POST["email"];
 
-		$query = $pdo->prepare("INSERT INTO `ienroll`.`classes` (`class_code`, `course_no`, `start_time`, `end_time`, `days`, `room`) VALUES (?,?,?,?,?,?);");
-		    $query->bindValue(1,$class_code);
-		    $query->bindValue(2,$course_no);
-		    $query->bindValue(3,$start_time);
-		    $query->bindValue(4,$end_time);
-		    $query->bindValue(5,$days);
-		    $query->bindValue(6,$room);
+		$query = $pdo->prepare("INSERT INTO `ienroll`.`users` (`username`, `password`, `first_name`, `middle_name`, `last_name`, `department`, `email`) VALUES (?,?,?,?,?,?,?);");
+		    $query->bindValue(1,$username);
+		    $query->bindValue(2,$password);
+		    $query->bindValue(3,$first_name);
+		    $query->bindValue(4,$middle_name);
+		    $query->bindValue(5,$last_name);
+		    $query->bindValue(6,$department);
+		    $query->bindValue(7,$email);
 		    $query->execute();
 		    header("Location: verification.php");
 		    
@@ -31,21 +32,21 @@
 	<div class="container-fluid" id="other">
 		<div class="container well">
 			<h2>Sign Up</h2>
-			<form action="fragments/addClass.php" id="form" method="post">
+			<form action="signUp.php" id="form" method="post">
 				<label>Username: </label>
-					<input class="form-control" type="text"  name="class_code"/>
+					<input class="form-control" type="text"  name="username"/>
 				<label>Password:</label>
-					<input class="form-control" type="text"  name="course_no"/>
+					<input class="form-control" type="text"  name="password"/>
 				<label>First Name: </label>
-					<input class="form-control" type="text"  name="start_time"/>
-				<label>Last Name: </label>
-					<input class="form-control" type="text"  name="end_time"/>
+					<input class="form-control" type="text"  name="first_name"/>
 				<label>Middle Name: </label>
-					<input class="form-control" type="text"  name="days"/>
+					<input class="form-control" type="text"  name="middle_name"/>
+				<label>Last Name: </label>
+					<input class="form-control" type="text"  name="last_name"/>
 				<label>Department: </label>
-					<input class="form-control" type="text"  name="days"/>
+					<input class="form-control" type="text"  name="department"/>
 				<label>Email: </label>
-					<input class="form-control" type="text"  name="room"/>
+					<input class="form-control" type="text"  name="email"/>
 				<button class="btn btn-success" name="signUp" type="submit">Sign Up</button>
 			</form>
 		</div>
