@@ -33,7 +33,6 @@
 								<li><a href="addSubject.php">Add Subject</a></li>
 								<li><a href="addCurriculum.php">Add Curriculum</a></li>
 								<li><a href="addClass.php">Add Class</a></li>
-								<li><a href="addBlock.php">Add Block</a></li>
 								<li><a href="enrollmentSched.php">Enrollment Sched</a></li>
 							</ul>
 						</li>
@@ -44,8 +43,6 @@
 								<li><a href="viewSubjects.php">View Subjects</a></li>
 								<li><a href="viewCurriculum.php">View Curriculums</a></li>
 								<li><a href="viewClasses.php">View Classes</a></li>
-								<li><a href="viewBlocks.php">View Blocks</a></li>
-								<li><a href="viewIntlSujects.php">Irregular Classes</a></li>
 								<li><a href="viewEnrollmentSched.php">Enrollment Sched</a></li>
 							</ul>
 						</li>

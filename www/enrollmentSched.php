@@ -8,7 +8,7 @@
 	<div class="container-fluid" id="other">
 		<div class="container well">
 			<h2>Enrollment Schedule</h2>
-			<form action="fragments/enrollmentSched.php" id="form" method="post">
+			<form action="enrollmentSched.php" id="form" method="post">
 				<label>Semester: </label>
 					<input class="form-control" type="text"  name="sem" placeholder="9811"/>
 				<label>Day: </label>
@@ -18,7 +18,7 @@
 				<label>Year: </label>
 					<input class="form-control" type="text"  name="year" placeholder="8:30"/>
 				<label>School: </label>
-					<input class="form-control" type="text"  name="school" placeholder="MWF"/>
+					<input class="form-control" type="text"  name="year" placeholder="SCIS"/>
 				<label>Course: </label>
 					<input class="form-control" type="text"  name="course" placeholder="S425"/>
 				<label>Type: </label>

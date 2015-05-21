@@ -19,8 +19,11 @@
 					<span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
 					<input class="form-control" type="text" id="password" name="password" placeholder="Password"/>
 				</div>
-				<button class="btn btn-success" type="submit">Sign in</button>
+				<button class="btn btn-success" name="signIn" type="submit">Sign in</button>
 			</form>
+			<div id="other-options">
+				<p><a href="signUp.php">Sign Up</a>&nbsp;&nbsp; | &nbsp;&nbsp;<a href="forgetPassword.php">Forget Password?</a></p>
+			</div>
 		</div>
 	</div>
 
