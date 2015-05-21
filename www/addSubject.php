@@ -7,16 +7,18 @@
 	
 	if (isset($_POST["addSubject"])) {
 
-		$course_code = $_POST["code"];
+		$subject_code = $_POST["code"];
 		$description = $_POST["desc"];
 		$unit = $_POST["unit"];
 		$price = $_POST["price"];
+		$slots = $_POST["slots"];
 
-		$query = $pdo->prepare("INSERT INTO `ienroll`.`subjects` (`course_no`, `description`, `unit`, `price`) VALUES (?,?,?,?);");
-		    $query->bindValue(1,$course_code);
+		$query = $pdo->prepare("INSERT INTO `ienroll`.`subjects` (`subject_code`, `description`, `unit`, `price`, `slots`) VALUES (?,?,?,?,?);");
+		    $query->bindValue(1,$subject_code);
 		    $query->bindValue(2,$description);
 		    $query->bindValue(3,$unit);
 		    $query->bindValue(4,$price);
+		    $query->bindValue(5,$slots);
 		    $query->execute();
 		    header("Location: success.php");
 		    
@@ -28,26 +30,16 @@
 		<div class="container well">
 			<h2>Add Subject</h2>
 			<form action="addSubject.php" id="form" method="post">
-				<label>Course Code</label>
-				<div class="input-group margin-bottom-sm">
-					<span class="input-group-addon"><i class="fa fa-code fa-fw"></i></span>
+				<label>Course Code: </label>
 					<input class="form-control" type="text"  name="code" placeholder="IT 312L"/>
-				</div>
-				<label>Description</label>
-				<div class="input-group margin-bottom-sm">
-					<span class="input-group-addon"><i class="fa fa-align-justify fa-fw"></i></span>
+				<label>Description: </label>
 					<input class="form-control" type="text"  name="desc" placeholder="Programming Applications Laboratory"/>
-				</div>
-				<label>Unit</label>
-				<div class="input-group margin-bottom-sm">
-					<span class="input-group-addon"><i class="fa fa-yahoo fa-fw"></i></span>
+				<label>Unit: </label>
 					<input class="form-control" type="text" name="unit" placeholder="3"/>
-				</div>
-				<label>Price</label>
-				<div class="input-group margin-bottom-sm">
-					<span class="input-group-addon"><i class="fa fa-money fa-fw"></i></span>
+				<label>Price: </label>
 					<input class="form-control" type="text"  name="price" placeholder="0.00"/>
-				</div>
+				<label>Slots: </label>
+					<input class="form-control" type="text"  name="slots" placeholder="50"/>
 				<button class="btn btn-success" name="addSubject" type="submit">Add Subject</button>
 			</form>
 		</div>
