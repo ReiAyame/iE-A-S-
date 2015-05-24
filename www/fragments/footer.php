@@ -19,5 +19,7 @@
 
 	<script src="../js/jquery.min.js"></script>
 	<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../js/highcharts.js"></script>
+	<script src="../js/modules/exporting.js"></script>
 </body>
 </html>

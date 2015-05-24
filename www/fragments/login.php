@@ -20,6 +20,8 @@
 				$dbusername = $row["username"];
 				$dbpassword = $row["password"];
 
+				echo "$dbusername";
+
 				if ( $username==$dbusername && $password==$dbpassword ) {
 					header("Location: ../welcome.php");
 					$_SESSION["username"]=$dbusername;
