@@ -4,47 +4,55 @@
 	include "fragments/nav.php";
 
 	require_once("fragments/connection.php");
-	
-	if (isset($_POST["addCurriculum"])) {
 
-		$curr_id = $_POST["curr_id"];
-		$school_year = $_POST["sch_yr"];
+	if (isset($_POST["addStudent"])) {
+
+		$student_id = $_POST["student_id"];
+		$password = $_POST["password"];
+		$last_name = $_POST["last_name"];
+		$first_name = $_POST["first_name"];
+		$middle_name = $_POST["middle_name"];
+		$gender = $_POST["gender"];
 		$course = $_POST["course"];
-		$year = $_POST["year"];
-		$semester = $_POST["sem"];
-		$course_no = $_POST["course_no"];
+		$email = $_POST["email"];
 
-		$query = $pdo->prepare("INSERT INTO `enrollmentsystem`.`curriculums` (`curr_id`, `school_year`, `course`, `year`, `semester`, `course_no`) VALUES (?,?,?,?,?,?);;");
-		    $query->bindValue(1,$curr_id);
-		    $query->bindValue(2,$school_year);
-		    $query->bindValue(3,$course);
-		    $query->bindValue(4,$year);
-		    $query->bindValue(5,$semester);
-		    $query->bindValue(6,$course_no);
-		    $query->execute();
-		    header("Location: success.php");
-		    
+		$query = $pdo->prepare("INSERT INTO `enrollmentsystem`.`students` (`student_id`, `password`, `last_name`, `first_name`, `middle_name`, `gender`, `course`, `email`) VALUES (?,?,?,?,?,?,?,?);");
+			$query->bindValue(1,$student_id);
+		    $query->bindValue(2,$password);
+		    $query->bindValue(3,$last_name);
+		    $query->bindValue(4,$first_name);
+		    $query->bindValue(5,$middle_name);
+		    $query->bindValue(6,$gender);
+		    $query->bindValue(7,$course);
+		    $query->bindValue(8,$email);
+		   	$query->execute();
+		   	header("Location: success.php");
+	
 	}
 	
 ?>
 
 	<div class="container-fluid" id="other">
 		<div class="container well">
-			<h2>Add Curriculum</h2>
-			<form action="addCurriculum.php" id="form" method="post">
-				<label>Curriculum ID: </label>
-					<input class="form-control" type="text"  name="curr_id" placeholder="75"/>
-				<label>School Year: </label>
-					<input class="form-control" type="text"  name="sch_yr" placeholder="2014"/>
-				<label>Course: </label>
+			<h2>Add Student</h2>
+			<form action="addStudent.php" id="form" method="post">
+				<label>Student ID: </label>
+					<input class="form-control" type="text"  name="student_id" placeholder="2150001"/>
+				<label>Password:</label>
+					<input class="form-control" type="text"  name="password" placeholder="1000512"/>
+				<label>Last Name: </label>
+					<input class="form-control" type="text"  name="last_name" placeholder="Doe"/>
+				<label>First Name: </label>
+					<input class="form-control" type="text"  name="first_name" placeholder="John"/>
+				<label>Middle Name: </label>
+					<input class="form-control" type="text"  name="middle_name" placeholder="Flores"/>
+				<label>Gender:</label>
+					<input class="form-control" type="text"  name="gender" placeholder="M"/>
+				<label>Course:</label>
 					<input class="form-control" type="text"  name="course" placeholder="BSIT"/>
-				<label>Year: </label>
-					<input class="form-control" type="text"  name="yr" placeholder="1"/>
-				<label>Semester:</label>
-					<input class="form-control" type="text"  name="sem" placeholder="FIRST"/>
-				<label>Course Number: </label>
-					<input class="form-control" type="text"  name="course_no" placeholder="ENGL 1"/>
-				<button class="btn btn-success" name="addCurriculum" type="submit">Add Curriculum</button>
+				<label>Email:</label>
+					<input class="form-control" type="text"  name="email" placeholder="johndoekennedy@gmail.com"/>
+				<button class="btn btn-success" name="addStudent" type="submit">Register</button>
 			</form>
 		</div>
 	</div>
