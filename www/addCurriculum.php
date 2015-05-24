@@ -5,51 +5,47 @@
 
 	require_once("fragments/connection.php");
 	
-	$query = $pdo->prepare("SELECT * FROM curriculums");
-	$query->execute();
-	$result = $query->fetchAll();
+	if (isset($_POST["addCurriculum"])) {
 
-    include "fragments/filter.php"
+		$curr_id = $_POST["curr_id"];
+		$school_year = $_POST["sch_yr"];
+		$course = $_POST["course"];
+		$year = $_POST["year"];
+		$semester = $_POST["sem"];
+		$course_no = $_POST["course_no"];
+
+		$query = $pdo->prepare("INSERT INTO `enrollmentsystem`.`curriculums` (`curr_id`, `school_year`, `course`, `year`, `semester`, `course_no`) VALUES (?,?,?,?,?,?);;");
+		    $query->bindValue(1,$curr_id);
+		    $query->bindValue(2,$school_year);
+		    $query->bindValue(3,$course);
+		    $query->bindValue(4,$year);
+		    $query->bindValue(5,$semester);
+		    $query->bindValue(6,$course_no);
+		    $query->execute();
+		    header("Location: success.php");
+		    
+	}
 	
 ?>
 
 	<div class="container-fluid" id="other">
-		<div class="container">
-			<h2>View Curriculum</h2>
-<div id="liveFilter">
-    <div class="liveFilterContainer">
-        <input type="text" class="liveFilterInput default" />
-        <a href="#" class="clearField" title="Clear Filter">x</a>
-    </div>
-    <div class="noResults"> Enter Search Key</div>
-			<table class="liveFilterList table table-hover">
-				<thead>
-					<tr>
-						<th>School Year</th>
-						<th>Course</th>
-						<th>Year</th>
-						<th>Semester</th>
-						<th>Subject Code</th>
-                        <th></th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php if(count($result)>0):?>
-					<?php $no=1; ?>
-					<?php foreach($result as $curriculum): ?>
-                    <tr>
-                        <td><?php echo $curriculum["school_year"]; ?></td>
-                        <td><?php echo $curriculum["course"]; ?></td>
-                        <td><?php echo $curriculum["year"] ?></td>
-                        <td><?php echo $curriculum["semester"] ?></td>
-                        <td><?php echo $curriculum["subjectCode"] ?></td>
-                        <td><a href="updateCurriculum.php?id=<?php echo $curriculum["curr_id"] ?>">Edit</a></td>
-                    </tr>
-                	<?php endforeach; ?>
-                	<?php endif; ?>
-				</tbody>
-			</table>
-			</div>
+		<div class="container well">
+			<h2>Add Curriculum</h2>
+			<form action="addCurriculum.php" id="form" method="post">
+				<label>Curriculum ID: </label>
+					<input class="form-control" type="text"  name="curr_id" placeholder="75"/>
+				<label>School Year: </label>
+					<input class="form-control" type="text"  name="sch_yr" placeholder="2014"/>
+				<label>Course: </label>
+					<input class="form-control" type="text"  name="course" placeholder="BSIT"/>
+				<label>Year: </label>
+					<input class="form-control" type="text"  name="yr" placeholder="1"/>
+				<label>Semester:</label>
+					<input class="form-control" type="text"  name="sem" placeholder="FIRST"/>
+				<label>Course Number: </label>
+					<input class="form-control" type="text"  name="course_no" placeholder="ENGL 1"/>
+				<button class="btn btn-success" name="addCurriculum" type="submit">Add Curriculum</button>
+			</form>
 		</div>
 	</div>
 
