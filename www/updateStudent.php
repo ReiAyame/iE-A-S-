@@ -14,13 +14,13 @@
 
 		if (isset($_POST["update"])) {
 
-			$last_name= $_POST["last_name"];
-			$first_name = $_POST["first_name"];
-			$middle_name = $_POST["middle_name"];
+			$last_name= $_POST["lastName"];
+			$first_name = $_POST["firstName"];
+			$middle_name = $_POST["middleName"];
 			$course = $_POST["course"];
 			$email = $_POST["email"];
 			
-			$query = $pdo->prepare("UPDATE `ienroll`.`students` SET `last_name`=?, `first_name`=?, `middle_name`=?, `course`=?, `email`=? WHERE `student_id`=?;");
+			$query = $pdo->prepare("UPDATE `enrollmentsystem`.`students` SET `lastName`=?, `firstName`=?, `middleName`=?, `course`=?, `email`=? WHERE `student_id`=?;");
 			    $query->bindValue(1,$last_name);
 			    $query->bindValue(2,$first_name);
 			    $query->bindValue(3,$middle_name);
@@ -41,13 +41,13 @@
 				<label>Student ID: </label>
 					<input class="form-control" type="text" name="student_id" value="<?php echo $result["student_id"] ?>" />
 				<label>Last Name: </label>
-					<input class="form-control" type="text" name="last_name" value="<?php echo $result["last_name"] ?>" />
+					<input class="form-control" type="text" name="lastName" value="<?php echo $result["lastName"] ?>" />
 				<label>First Name: </label>
-					<input class="form-control" type="text" name="first_name" value="<?php echo $result["first_name"] ?>" />
+					<input class="form-control" type="text" name="firstName" value="<?php echo $result["firstName"] ?>" />
 				<label>Middle Name:</label>
-					<input class="form-control" type="text" name="middle_name" value="<?php echo $result["middle_name"] ?>" />
+					<input class="form-control" type="text" name="middleName" value="<?php echo $result["middleName"] ?>" />
 				<label>Course:</label>
-					<input class="form-control" type="text" name="email" value="<?php echo $result["course"] ?>" />
+					<input class="form-control" type="text" name="course" value="<?php echo $result["course"] ?>" />
 				<label>Email:</label>
 					<input class="form-control" type="text" name="email" value="<?php echo $result["email"] ?>" />
 				<button class="btn btn-success" type="submit" name="update">Update Student</button>
