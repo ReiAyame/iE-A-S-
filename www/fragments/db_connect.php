@@ -3,7 +3,7 @@
 $host = "localhost";
 $username = "root";
 $password = "";
-$db_name = "ienroll";
+$db_name = "enrollmentsystem";
 
 //connect to mysql server
 $mysqli = new mysqli($host, $username, $password, $db_name);

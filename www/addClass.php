@@ -14,7 +14,7 @@
 		$days = $_POST["days"];
 		$room = $_POST["room"];
 
-		$query = $pdo->prepare("INSERT INTO `ienroll`.`classes` (`class_code`, `subject_code`, `start_time`, `end_time`, `days`, `room`) VALUES (?,?,?,?,?,?);");
+		$query = $pdo->prepare("INSERT INTO `enrollmentsystem`.`classes` (`class_code`, `subject_code`, `start_time`, `end_time`, `days`, `room`) VALUES (?,?,?,?,?,?);");
 		    $query->bindValue(1,$class_code);
 		    $query->bindValue(2,$subject_code);
 		    $query->bindValue(3,$start_time);
