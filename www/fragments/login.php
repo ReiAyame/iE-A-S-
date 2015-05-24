@@ -6,7 +6,7 @@
 	$password = $_POST["password"];
 
 	if ($username&&$password) {
-		$connect = new PDO("mysql:host=localhost;dbname=iEnroll;charset=utf8", "root", "");
+		$connect = new PDO("mysql:host=localhost;dbname=enrollmentsystem;charset=utf8", "root", "");
 		
 		$connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
