@@ -20,7 +20,7 @@
 			$course = $_POST["course"];
 			$email = $_POST["email"];
 			
-			$query = $pdo->prepare("UPDATE `ienroll`.`students` SET `last_name`=?, `first_name`=?, `middle_name`=?, `course`=?, `email`=? WHERE `student_id`=?;");
+			$query = $pdo->prepare("UPDATE `ienroll`.`students` SET `lastName`=?, `firstName`=?, `middeName`=?, `course`=?, `email`=? WHERE `student_id`=?;");
 			    $query->bindValue(1,$last_name);
 			    $query->bindValue(2,$first_name);
 			    $query->bindValue(3,$middle_name);
@@ -47,7 +47,7 @@
 				<label>Middle Name:</label>
 					<input class="form-control" type="text" name="middle_name" value="<?php echo $result["middle_name"] ?>" />
 				<label>Course:</label>
-					<input class="form-control" type="text" name="email" value="<?php echo $result["course"] ?>" />
+					<input class="form-control" type="text" name="course" value="<?php echo $result["course"] ?>" />
 				<label>Email:</label>
 					<input class="form-control" type="text" name="email" value="<?php echo $result["email"] ?>" />
 				<button class="btn btn-success" type="submit" name="update">Update Student</button>

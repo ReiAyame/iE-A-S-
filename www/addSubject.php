@@ -13,12 +13,11 @@
 		$price = $_POST["price"];
 		$slots = $_POST["slots"];
 
-		$query = $pdo->prepare("INSERT INTO `ienroll`.`subjects` (`subject_code`, `description`, `unit`, `price`, `slots`) VALUES (?,?,?,?,?);");
+		$query = $pdo->prepare("INSERT INTO `ienroll`.`subjects` (`subjectCode`, `description`, `units`, `slots`) VALUES (?,?,?,?);");
 		    $query->bindValue(1,$subject_code);
 		    $query->bindValue(2,$description);
 		    $query->bindValue(3,$unit);
-		    $query->bindValue(4,$price);
-		    $query->bindValue(5,$slots);
+		    $query->bindValue(4,$slots);
 		    $query->execute();
 		    header("Location: success.php");
 		    

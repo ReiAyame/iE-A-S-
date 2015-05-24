@@ -16,7 +16,7 @@
 		$course = $_POST["course"];
 		$email = $_POST["email"];
 
-		$query = $pdo->prepare("INSERT INTO `ienroll`.`students` (`student_id`, `password`, `last_name`, `first_name`, `middle_name`, `gender`, `course`, `email`) VALUES (?,?,?,?,?,?,?,?);");
+		$query = $pdo->prepare("INSERT INTO `ienroll`.`students` (`student_id`, `password`, `lastName`, `firstName`, `middleName`, `gender`, `course`, `email`) VALUES (?,?,?,?,?,?,?,?);");
 			$query->bindValue(1,$student_id);
 		    $query->bindValue(2,$password);
 		    $query->bindValue(3,$last_name);
