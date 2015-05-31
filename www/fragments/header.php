@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
 	<title>
-      $title
+      Enrollment System
     </title>
     
     <link rel="shortcut icon" href="../images/favicon.ico">

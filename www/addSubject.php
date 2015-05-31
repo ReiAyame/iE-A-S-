@@ -13,7 +13,7 @@
 		$price = $_POST["price"];
 		$slots = $_POST["slots"];
 
-		$query = $pdo->prepare("INSERT INTO `enrollmentsystem`.`subjects` (`subjectCode`, `description`, `units`, `slots`) VALUES (?,?,?,?);");
+		$query = $pdo->prepare("INSERT INTO `enrollmentsystem` VALUES (?,?,?,?,?,?,?,?,?,?,?);");
 		    $query->bindValue(1,$subject_code);
 		    $query->bindValue(2,$description);
 		    $query->bindValue(3,$unit);

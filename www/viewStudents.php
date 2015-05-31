@@ -59,12 +59,12 @@
 	                    <td><?php
 								
 								$course = $student["course"];
-								
+								//echo $course;
 								$sch = $pdo->prepare("SELECT `schools`.`description` AS `description`, `schools`.`school_code` AS `school_code`, `courses`.`course` AS `course`, `courses`.`school` AS `school`, `students`.`course` AS `student_course` FROM `schools` INNER JOIN `courses` INNER JOIN students WHERE `courses`.`course` = ? AND `courses`.`school` = `schools`.`school_code` LIMIT 1;");
 								$sch->bindValue(1, $course);
 								$sch->execute();
 								$res = $sch->fetchAll();
-								
+
 								foreach ($res as $val)
 												{
 												echo $val["description"];
@@ -72,7 +72,7 @@
 								
 							?></td>
 	                    <td><?php
-								echo "$course";
+								echo $student["course"];
 							?></td>
 	                    <td><a href="updateStudent.php?student_id=<?php
 								echo $student["student_id"];
